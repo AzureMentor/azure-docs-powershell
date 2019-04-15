@@ -1,11 +1,9 @@
 ---
 title: Overview of Azure PowerShell | Microsoft Docs
 description: An overview of Azure PowerShell with links to installation and configuration.
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
-ms.product: azure
-ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
@@ -13,6 +11,8 @@ ms.date: 08/31/2017
 ---
 
 # Overview of Azure PowerShell
+
+[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
 
 Azure PowerShell provides a set of cmdlets that use the [Azure Resource
 Manager](/azure/azure-resource-manager/resource-group-overview) model for managing your Azure
@@ -31,13 +31,7 @@ The following samples can help you learn how to perform common scenarios with Az
 * [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 * [SQL Databases](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
-> [!NOTE]
-> If you have deployments that use the classic deployment model that cannot be converted,
-> you can install the Service Management version of Azure PowerShell. For more information, see
-> [Install the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps).
-
-
-### Need help with PowerShell?
+## Learn PowerShell basics
 
 If you are unfamiliar with PowerShell, you may find an introduction to PowerShell helpful.
 

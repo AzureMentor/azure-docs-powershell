@@ -1,12 +1,9 @@
 ---
 title: Using experimental Azure PowerShell modules
 description: Understand the philosophy and usage of experimental Azure PowerShell modules.
-services: azure
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
-ms.product: azure
-ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
@@ -38,7 +35,7 @@ use the same cmdlet and parameter names.
 Experimental modules are published to the PowerShell Gallery just like the existing Azure
 PowerShell modules. To see a list of experimental modules, run the following command:
 
-```powershell
+```powershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
@@ -51,7 +48,7 @@ Version Name                         Repository Description
 
 To install the experimental module, use the following commands from an elevated PowerShell session:
 
-```powershell
+```powershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```
@@ -78,7 +75,7 @@ users.
 The core improvements are regarded as "common sense", and little experimentation is needed to move
 forward in implementing these updates.
 
-- Scenario-based Cmdlets - **All*- cmdlets should be designed around scenarios, not the Azure REST
+- Scenario-based Cmdlets - <em>*All</em>- cmdlets should be designed around scenarios, not the Azure REST
   service.
 
 - Shorter Names - Includes the names of cmdlets (for example, `New-AzureRmVM` => `New-AzVm`) and the

@@ -1,12 +1,9 @@
 ---
 title: Install and configure Azure PowerShell | Microsoft Docs
 description: How to install and configure Azure PowerShell for first time use.
-services: azure
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
-ms.product: azure
-ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
@@ -20,14 +17,16 @@ If you want to use Azure PowerShell on macOS or Linux, see the following article
 
 Installing Azure PowerShell from the PowerShell Gallery is the preferred method of installation.
 
+[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
+
 ## Step 1: Install PowerShellGet
 
 Installing items from the PowerShell Gallery requires the PowerShellGet module. Make sure you have
 the appropriate version of PowerShellGet and other system requirements. Run the following command
 to see if you have PowerShellGet installed on your system.
 
-```powershell
-Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
+```powershell-interactive
+Get-InstalledModule -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
 ```
 
 You should see something similar to the following output:
@@ -43,7 +42,7 @@ PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1
 
 You need PowerShellGet version 1.1.2.0 or higher. To update PowerShellGet, use the following command:
 
-```powershell
+```powershell-interactive
 Install-Module PowerShellGet -Force
 ```
 
@@ -54,13 +53,18 @@ section of this article.
 > Using PowerShellGet requires an Execution Policy that allows you to run scripts. For more
 > information about PowerShell's Execution Policy, see
 > [About Execution Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+>
+> [!IMPORTANT]
+> The module described in this document, AzureRM, uses .NET Framework. This makes it incompatible with PowerShell 6.0,
+> which uses .NET Core. If you are using PowerShell 6.0, follow the [installation instructions for
+> macOS and Linux](install-azurermps-maclinux.md).
 
 ## Step 2: Install Azure PowerShell
 
 Installing Azure PowerShell from the PowerShell Gallery requires elevated privileges. Run the
 following command from an elevated PowerShell session:
 
-```powershell
+```powershell-interactive
 # Install the Azure Resource Manager modules from the PowerShell Gallery
 Install-Module -Name AzureRM -AllowClobber
 ```
@@ -93,11 +97,12 @@ this issue, see the [Updating to a new version of Azure PowerShell](#update-azps
 article.
 
 ## Step 3: Load the AzureRM module
+
 Once the module is installed, you need to load the module into your PowerShell session. You should
 do this in a normal (non-elevated) PowerShell session. Modules are loaded using the `Import-Module`
 cmdlet, as follows:
 
-```powershell
+```powershell-interactive
 Import-Module -Name AzureRM
 ```
 
@@ -123,15 +128,14 @@ feedback from the command line, use the `Send-Feedback` cmdlet.
 |I want to upgrade to PowerShell 5|[Install the latest version of WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
 |I am running on a version of Windows with PowerShell 3 or PowerShell 4|[Get the PackageManagement modules](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
-<a id="helpmechoose"></a>
-### Checking the version of Azure PowerShell
+### <div id="helpmechoose"/>Checking the version of Azure PowerShell
 
 Although we encourage you to upgrade to the latest version as early as possible, several versions
 of Azure PowerShell are supported. To determine the version of Azure PowerShell you have installed,
-run `Get-Module AzureRM` from your command line.
+run `Get-InstalledModule AzureRM` from your command line.
 
-```powershell
-Get-Module AzureRM -ListAvailable | Select-Object -Property Name,Version,Path
+```powershell-interactive
+Get-InstalledModule AzureRM -AllVersions | Select-Object -Property Name,Version,Path
 ```
 
 ### Support for classic deployment methods
@@ -142,7 +146,7 @@ Service Management module](/powershell/azure/servicemanagement/install-azure-ps)
 common dependencies. If you use both the Azure and AzureRM modules, you should install the same
 version of each package.
 
-### <a id="update-azps"></a>Updating to a new version of Azure PowerShell
+### <div id="update-azps"/>Updating to a new version of Azure PowerShell
 
 If you have a previous version of Azure PowerShell installed that includes the Service Management
 module, you may receive the following error:
@@ -155,14 +159,14 @@ still want to install this module 'Azure.Storage', use -AllowClobber parameter.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm1:1772 char:21
 + ...          $null = PackageManagement\Install-Package @PSBoundParameters
 +                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidOperation: (Microsoft.Power....InstallPackage:InstallPackage) [Install-Package], Exception
-    + FullyQualifiedErrorId : CommandAlreadyAvailable,Validate-ModuleCommandAlreadyAvailable,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage
+    + CategoryInfo          : InvalidOperation: (Microsoft.Power....InstallPackage:InstallPackage) [Install-Package], Exception
+    + FullyQualifiedErrorId : CommandAlreadyAvailable,Validate-ModuleCommandAlreadyAvailable,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage
 ```
 
 As the error message states, you need to use the -AllowClobber parameter to install the module. Use
 the following command:
 
-```powershell
+```powershell-interactive
 # Install the Azure Resource Manager modules from the PowerShell Gallery
 Install-Module -Name AzureRM -AllowClobber
 ```
@@ -177,22 +181,22 @@ multiple versions. For example, you may have scripts written using a previous ve
 PowerShell that you don't have the time or resources to updated. The following commands illustrate
 how to install multiple versions of Azure PowerShell:
 
-```powershell
+```powershell-interactive
 Install-Module -Name AzureRM -RequiredVersion 3.7.0
-Install-Module -Name AzureRM -RequiredVersion 1.2.9
+Install-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
 Only one version of the module can be loaded in a PowerShell session. You must open a new
 PowerShell window and use `Import-Module` to import a specific version of the AzureRM cmdlets:
 
-```powershell
-Import-Module -Name AzureRM -RequiredVersion 1.2.9
+```powershell-interactive
+Import-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
 > [!NOTE]
 > Version 2.1.0 and version 1.2.6 are the first module versions designed to be installed and used
 side by side. When loading an earlier version of the Azure PowerShell, incompatible versions of the
-**AzureRM.Profile** module are loaded. This results in the cmdlets prompting you to log in whenever
+**AzureRM.Profile** module are loaded. This results in the cmdlets prompting you to sign in whenever
 you execute a cmdlet.
 
 ### Other installation methods

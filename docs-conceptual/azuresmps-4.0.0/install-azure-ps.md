@@ -1,12 +1,9 @@
 ---
 title: Install and configure the Azure PowerShell Service Management module | Microsoft Docs
 description: How to install and configure Azure PowerShell for first time use.
-services: azure
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
-ms.product: azure
-ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
@@ -24,12 +21,12 @@ the appropriate version of PowerShellGet and other system requirements. Run the 
 to see if you have PowerShellGet installed on your system.
 
 ```powershell
-Get-Module PowerShellGet -list | Select-Object Name,Version,Path
+Get-InstalledModule PowerShellGet -AllVersions | Select-Object Name,Version,Path
 ```
 
 You should see something similar to the following output:
 
-```
+```output
 Name          Version Path
 ----          ------- ----
 PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
@@ -82,7 +79,7 @@ all cmdlets within that session. Now you are ready to use the modules below.
 
 Azure PowerShell modules are updated frequently. If you notice that the online cmdlet help includes
 cmdlets or parameters that are not in your module, download and install the latest version of the
-module. To find the version of your module, type: `(Get-Module Azure).Version`.
+module. To find the version of your module, type: `(Get-InstalledModule Azure).Version`.
 
 For sample scripts that can help you automate some of the common tasks in Azure, see the
 [Windows Azure Script Center](http://www.windowsazure.com/documentation/scripts/).
@@ -98,13 +95,14 @@ For general information about installing, learning, using, and customizing Windo
 |I want to upgrade to PowerShell 5|[Install the latest version of WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
 |I am running on a version of Windows with PowerShell 3 or PowerShell 4|[Get the PackageManagement modules](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
-<a id="helpmechoose"></a>
+<div id="helpmechoose"/>
+
 ### Checking the version of Azure PowerShell
 
 Although we encourage you to upgrade to the latest version as early as possible, several versions
 of Azure PowerShell are support. To determine the version of Azure PowerShell you have installed,
-run `Get-Module AzureRM` from your command line.
+run `Get-InstalledModule Azure` from your command line.
 
 ```powershell
-Get-Module AzureRM -list | Select-Object Name,Version,Path
+Get-InstalledModule Azure -AllVersions | Select-Object Name,Version,Path
 ```

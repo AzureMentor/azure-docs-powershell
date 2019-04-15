@@ -1,23 +1,20 @@
 ---
 title: Other ways to install Azure PowerShell | Microsoft Docs
 description: How to install Azure PowerShell using the MSI package or the Web Platform Installer.
-services: azure
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
-ms.product: azure
-ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
 ---
-
 # Other installation methods
 
 Azure PowerShell has multiple installation methods. Using PowerShellGet with the PowerShell Gallery
 is the preferred method. Azure PowerShell can be installed on Windows using the Web Platform
-Installer (WebPI) or by using the MSI file available from GitHub. Azure PowerShell can also be
-installed in a Docker container.
+Installer (WebPI) or by using the MSI file available from GitHub.
+
+[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
 
 ## Install on Windows using the Web Platform Installer
 
@@ -41,9 +38,9 @@ Once the installation completes, your `$env:PSModulePath` setting should include
 containing the Azure PowerShell cmdlets. The following command can be used to verify that the Azure
 PowerShell is installed properly.
 
-```powershell
+```powershell-interactive
 # To make sure the Azure PowerShell module is available after you install
-Get-Module -ListAvailable Azure* | Select-Object Name, Version, Path
+Get-InstalledModule -Name AzureRM -AllVersions | Select-Object Name, Version, Path
 ```
 
 > [!NOTE]
@@ -54,7 +51,7 @@ fail to include the path where Azure PowerShell is installed.
 When attempting to load or execute cmdlets after installation, you can receive the following error
 message:
 
-```
+```output
 PS C:\> Login-AzureRmAccount
 Login-AzureRmAccount : The term 'Login-AzureRmAccount' is not recognized as the name of a cmdlet,
 function, script file, or operable program. Check the spelling of the name, or if a path was
@@ -69,7 +66,7 @@ At line:1 char:1
 This error can be corrected by restarting the machine or importing the module using the fully
 qualified path. For example:
 
-```powershell
+```powershell-interactive
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"
 ```
 
@@ -81,29 +78,3 @@ versions of Azure modules, the installer automatically removes them. The MSI pac
 modules in `$env:ProgramFiles\WindowsPowerShell\Modules` but does not create version-specific
 folders.
 
-## Install in a Docker container
-
-We maintain a Docker image preconfigured with Azure PowerShell.
-
-Run the container with `docker run`.
-
-```powershell
-docker run azuresdk/azure-powershell
-```
-
-In addition, we maintain a subset of cmdlets as a PowerShell Core container.
-
-For Mac/Linux, use the `latest` image.
-
-```bash
-docker run azuresdk/azure-powershell-core:latest
-```
-
-For Windows, use the `nanoserver` image.
-
-```powershell
-docker run azuresdk/azure-powershell-core:nanoserver
-```
-
-Azure PowerShell is installed on the image via `Install-Module` from the
-[PowerShell Gallery](https://www.powershellgallery.com/).
