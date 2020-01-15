@@ -11,6 +11,8 @@ ms.date: 05/01/2018
 
 # Breaking changes for Microsoft Azure PowerShell 4.0.0
 
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+
 This document serves as both a breaking change notification and migration guide for consumers of the Microsoft Azure PowerShell cmdlets. Each section describes both the impetus for the breaking change and the migration path of least resistance. For in-depth context, please refer to the pull request associated with each change.
 
 ## Table of Contents
@@ -86,7 +88,7 @@ $s = $s1.StatusCode
 - This cmdlet has been deprecated.
     
 ### Get-AzureRmAlertRule
-- Each element of the the output (a list of objects) of this cmdlet is flattened, i.e. instead of returning objects with the structure `{ Id, Location, Name, Tags, Properties }` it will return objects with the structure `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}`, which is all of the attributes of an Azure Resource plus all of the attributes of an AlertRuleResource at the top level.
+- Each element of the output (a list of objects) of this cmdlet is flattened, i.e. instead of returning objects with the structure `{ Id, Location, Name, Tags, Properties }` it will return objects with the structure `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}`, which is all of the attributes of an Azure Resource plus all of the attributes of an AlertRuleResource at the top level.
     
 ```powershell-interactive
 # Old
@@ -173,7 +175,7 @@ $a = $s1.NewResource.ServiceBusRuleId
 ```
     
 ### Set-AzureRmDiagnosticSettings
-- The command is going to be renamed to `Update-AzureRmDiagnsoticSettings`
+- The command is going to be renamed to `Update-AzureRmDiagnosticSettings`
 
 ```powershell-interactive
 # Old

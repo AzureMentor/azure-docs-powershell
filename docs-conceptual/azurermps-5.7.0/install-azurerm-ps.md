@@ -11,6 +11,8 @@ ms.date: 06/15/2018
 
 # Install Azure PowerShell on Windows with PowerShellGet
 
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+
 This article explains the steps to install the Azure PowerShell modules for PowerShell 5.x for Windows using
 PowerShellGet. PowerShellGet and module management is the preferred way to install Azure PowerShell but if you would rather install with
 the Web Platform Installer or MSI package, see [Other installation methods](other-install.md).
@@ -53,8 +55,8 @@ If you don't have PowerShellGet installed, follow the instructions in the table 
 |Scenario|Install instructions|
 |---|---|
 |Windows 10<br/>Windows Server 2016|Built into Windows Management Framework (WMF) 5.0 included in the OS|
-|Upgrade to PowerShell 5| <ol><li>[Install the latest version of WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>Run the following command:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|Windows with PowerShell 3 or PowerShell 4|<ol><il>[Get the PackageManagement modules](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Run the following command:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
+|Upgrade to PowerShell 5| <ol><li>[Install the latest version of WMF](https://www.microsoft.com/download/details.aspx?id=54616)</li><li>Run the following command:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
+|Windows with PowerShell 3 or PowerShell 4|<ol><il>[Get the PackageManagement modules](https://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Run the following command:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
 
 > [!NOTE]
 > Using PowerShellGet requires an Execution Policy that allows you to run scripts. For more

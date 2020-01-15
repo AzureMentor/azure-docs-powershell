@@ -32,18 +32,11 @@
             },
             {
                 "files": [
-                    "index.md"
-                ],
-                "src": "docs-conceptual",
-                "dest": "azure"
-            },
-            {
-                "files": [
                     "**/*.yml",
                     "**/*.md"
                 ],
-                "src": "azurermps-2.3.0",
-                "version": "azurermps-2.3.0",
+                "src": "azurermps-2.5.0",
+                "version": "azurermps-2.5.0",
                 "exclude": [
                     "docs-conceptual/**"
                 ],
@@ -54,8 +47,8 @@
                     "**/*.yml",
                     "**/*.md"
                 ],
-                "src": "docs-conceptual/azurermps-2.3.0",
-                "version": "azurermps-2.3.0",
+                "src": "docs-conceptual/azurermps-2.5.0",
+                "version": "azurermps-2.5.0",
                 "dest": "azure/azurerm"
             },
             {
@@ -126,8 +119,8 @@
                     "**/*.yml",
                     "**/*.md"
                 ],
-                "src": "azps-2.0.0",
-                "version": "azps-2.0.0",
+                "src": "azps-1.8.0",
+                "version": "azps-1.8.0",
                 "exclude": [
                     "docs-conceptual/**"
                 ],
@@ -138,8 +131,8 @@
                     "**/*.yml",
                     "**/*.md"
                 ],
-                "src": "docs-conceptual/azps-2.0.0",
-                "version": "azps-2.0.0",
+                "src": "docs-conceptual/azps-1.8.0",
+                "version": "azps-1.8.0",
                 "dest": "azure"
             },
             {
@@ -147,8 +140,8 @@
                     "**/*.yml",
                     "**/*.md"
                 ],
-                "src": "azps-2.0.0",
-                "version": "azps-2.0.0",
+                "src": "azps-2.8.0",
+                "version": "azps-2.8.0",
                 "exclude": [
                     "docs-conceptual/**"
                 ],
@@ -159,8 +152,29 @@
                     "**/*.yml",
                     "**/*.md"
                 ],
-                "src": "docs-conceptual/azps-2.0.0",
-                "version": "azps-2.0.0",
+                "src": "docs-conceptual/azps-2.8.0",
+                "version": "azps-2.8.0",
+                "dest": "azure"
+            },
+            {
+                "files": [
+                    "**/*.yml",
+                    "**/*.md"
+                ],
+                "src": "azps-3.3.0",
+                "version": "azps-3.3.0",
+                "exclude": [
+                    "docs-conceptual/**"
+                ],
+                "dest": "module"
+            },
+            {
+                "files": [
+                    "**/*.yml",
+                    "**/*.md"
+                ],
+                "src": "docs-conceptual/azps-3.3.0",
+                "version": "azps-3.3.0",
                 "dest": "azure"
             },
             {
@@ -328,16 +342,16 @@
                 "files": [
                     "toc.yml"
                 ],
-                "src": "azurestackps-1.7.1",
-                "version": "azurestackps-1.7.1",
+                "src": "azurestackps-1.7.2",
+                "version": "azurestackps-1.7.2",
                 "dest": "module/azure-stack"
             },
             {
                 "files": [
                     "**/*.md"
                 ],
-                "src": "azurestackps-1.7.1",
-                "version": "azurestackps-1.7.1",
+                "src": "azurestackps-1.7.2",
+                "version": "azurestackps-1.7.2",
                 "exclude": [
                     "docs-conceptual/**"
                 ],
@@ -348,8 +362,8 @@
                     "**/*.yml",
                     "**/*.md"
                 ],
-                "src": "docs-conceptual/azurestackps-1.7.1",
-                "version": "azurestackps-1.7.1",
+                "src": "docs-conceptual/azurestackps-1.7.2",
+                "version": "azurestackps-1.7.2",
                 "dest": "azure/azure-stack"
             },
             {
@@ -426,7 +440,7 @@
                 "files": [
                     "media/**"
                 ],
-                "version": "azurermps-2.3.0"
+                "version": "azurermps-2.5.0"
             },
             {
                 "files": [
@@ -450,15 +464,27 @@
                 "files": [
                     "media/**"
                 ],
-                "version": "azps-2.0.0"
+                "version": "azps-1.8.0"
+            },
+            {
+                "files": [
+                    "media/**"
+                ],
+                "version": "azps-2.8.0"
+            },
+            {
+                "files": [
+                    "media/**"
+                ],
+                "version": "azps-3.3.0"
             }
         ],
         "versions": {
             "azuredmps-0.9.0-preview": {
                 "dest": "azuredmps-0.9.0-preview"
             },
-            "azurermps-2.3.0": {
-                "dest": "azurermps-2.3.0"
+            "azurermps-2.5.0": {
+                "dest": "azurermps-2.5.0"
             },
             "azurermps-4.4.1": {
                 "dest": "azurermps-4.4.1"
@@ -469,8 +495,14 @@
             "azurermps-6.13.0": {
                 "dest": "azurermps-6.13.0"
             },
-            "azps-2.0.0": {
-                "dest": "azps-2.0.0"
+            "azps-1.8.0": {
+                "dest": "azps-1.8.0"
+            },
+            "azps-2.8.0": {
+                "dest": "azps-2.8.0"
+            },
+            "azps-3.3.0": {
+                "dest": "azps-3.3.0"
             },
             "azuresmps-4.0.0": {
                 "dest": "azuresmps-4.0.0"
@@ -487,8 +519,8 @@
             "azurestackps-1.6.0": {
                 "dest": "azurestackps-1.6.0"
             },
-            "azurestackps-1.7.1": {
-                "dest": "azurestackps-1.7.1"
+            "azurestackps-1.7.2": {
+                "dest": "azurestackps-1.7.2"
             },
             "azureipps": {
                 "dest": "azureipps"
@@ -514,13 +546,15 @@
                 "azurermps-*/**/*.md": "jasonsha",
                 "azuresmps-*/**/*.md": "jasonsha",
                 "azurestackps-*/**/*.md": "jeffgilb",
-                "azuredmps-*/**/*.md": "deveshguha"
+                "azuredmps-*/**/*.md": "deveshguha",
+                "azps-*/**/*.md": "dcaro"
             },
             "author": {
                 "azurermps-*/**/*.md": "JasonRShaver",
                 "azuresmps-*/**/*.md": "JasonRShaver",
                 "azurestackps-*/**/*.md": "jeffgilb",
-                "azuredmps-*/**/*.md": "deveshguha"
+                "azuredmps-*/**/*.md": "deveshguha",
+                "azps-*/**/*.md": "dcaro"
             },
             "ms.manager": {
                 "azurermps-*/**/*.md": "carmonm",
@@ -530,17 +564,85 @@
             "ms.service": {
                 "docs-conceptual/azurestackps-*/**/*.md": "azure-stack",
                 "azurestackps-*/**/*.md": "azure-stack",
-                "docs-conceptual/azuresmps-*/**/*.md": "azure-powershell",
-                "azuresmps-*/**/*.md": "azure-powershell",
+                "azuresmps-*/**/*.md": "azure-asm",
+                "docs-conceptual/azuresmps-*/**/*.md": "azure-asm",
                 "docs-conceptual/azurermps-*/**/*.md": "azure-powershell",
-                "azurermps-*/**/*.md": "azure-powershell"
+                "az*-*/**/*.md": "azure-powershell",
+                "az*-*/ApiManagement.ServiceManagement/*.md": "api-management",
+                "az*-*/Azure.Storage/*.md": "storage",
+                "az*-*/Azure.aks/*.md": "container-service",
+                "az*-*/Az*.AnalysisServices/*.md": "azure-analysis-services",
+                "az*-*/Az*.ApiManagement/*.md": "api-management",
+                "az*-*/Az*.ApplicationInsights/*.md": "azure-monitor",
+                "az*-*/Az*.Automation/*.md": "automation",
+                "az*-*/Az*.AzureStackAdmin/*.md": "azure-stack",
+                "az*-*/Az*.AzureStackStorage/*.md": "azure-stack",
+                "az*-*/Az*.Backup/*.md": "backup",
+                "az*-*/Az*.Batch/*.md": "batch",
+                "az*-*/Az*.Billing/*.md": "billing",
+                "az*-*/Az*.Cdn/*.md": "azure-cdn",
+                "az*-*/Az*.CognitiveServices/*.md": "cognitive-services",
+                "az*-*/Az*.Compute/*.md": "virtual-machines",
+                "az*-*/Az*.ContainerInstance/*.md": "container-instances",
+                "az*-*/Az*.ContainerRegistry/*.md": "container-registry",
+                "az*-*/Az*.Consumption/*.md": "azure-resource-manager",
+                "az*-*/Az*.DataFactories/*.md": "data-factory",
+                "az*-*/Az*.DataFactoryV2/*.md": "data-factory",
+                "az*-*/Az*.DataLakeAnalytics/*.md": "data-lake-analytics",
+                "az*-*/Az*.DataLakeStore/*.md": "data-lake-store",
+                "az*-*/Az*.DataMigration/*.md": "dms",
+                "az*-*/Az*.DevSpaces/*.md": "azure-dev-spaces",
+                "az*-*/Az*.DevTestLabs/*.md": "devtest-lab",
+                "az*-*/Az*.DeviceProvisioningServices/*.md": "iot-dps",
+                "az*-*/Az*.DNS/*.md": "dns",
+                "az*-*/Az*.EventGrid/*.md": "event-grid",
+                "az*-*/Az*.EventHub/*.md": "event-hubs",
+                "az*-*/Az*.FrontDoor/*.md": "frontdoor",
+                "az*-*/Az*.HDInsight/*.md": "hdinsight",
+                "az*-*/Az*.Insights/*.md": "azure-monitor",
+                "az*-*/Az*.IotCentral/*.md": "iot-central",
+                "az*-*/Az*.IotHub/*.md": "iot-hub",
+                "az*-*/Az*.KeyVault/*.md": "key-vault",
+                "az*-*/Az*.Kusto/*.md": "data-explorer",
+                "az*-*/Az*.LogicApp/*.md": "logic-apps",
+                "az*-*/Az*.MachineLearning*/*.md": "machine-learning",
+                "az*-*/Az*.ManagedServiceIdentity*/*.md": "active-directory",
+                "az*-*/Az*.Maps*/*.md": "azure-maps",
+                "az*-*/Az*.Media/*.md": "media-services",
+                "az*-*/Az*.Network/*.md": "virtual-network",
+                "az*-*/Az*.NotificationHubs/*.md": "notification-hubs",
+                "az*-*/Az*.OperationalInsights/*.md": "operational-insights",
+                "az*-*/Az*.PolicyInsights/*.md": "azure-policy",
+                "az*-*/Az*.PowerBIEmbedded/*.md": "power-bi-embedded",
+                "az*-*/Az*.Profile/*.md": "azure-resource-manager",
+                "az*-*/Az*.RecoveryServices/*.md": "site-recovery",
+                "az*-*/Az*.RecoveryServices.Backup/*.md": "site-recovery",
+                "az*-*/Az*.RedisCache/*.md": "cache",
+                "az*-*/Az*.Relay/*.md": "service-bus",
+                "az*-*/Az*.ResourceGraph/*.md": "resource-graph",
+                "az*-*/Az*.Resources/*.md": "azure-resource-manager",
+                "az*-*/Az*.Scheduler/*.md": "scheduler",
+                "az*-*/Az*.Security/*.md": "security",
+                "az*-*/Az*.ServerManagement/*.md": "server-management",
+                "az*-*/Az*.ServiceBus/*.md": "service-bus",
+                "az*-*/Az*.ServiceFabric/*.md": "service-fabric",
+                "az*-*/Az*.SignalR/*.md": "signalr",
+                "az*-*/Az*.SiteRecovery/*.md": "site-recovery",
+                "az*-*/Az*.Sql/*.md": "sql-database",
+                "az*-*/Az*.Storage/*.md": "storage",
+                "az*-*/Az*.StreamAnalytics/*.md": "stream-analytics",
+                "az*-*/Az*.Tags/*.md": "azure-resource-manager",
+                "az*-*/Az*.TrafficManager/*.md": "traffic-manager",
+                "az*-*/Az*.UsageAggregates/*.md": "billing",
+                "az*-*/Az*.Websites/*.md": "app-service"
             },
             "ms.topic": {
+                "azps-*/**/*.md": "reference",
                 "azuredmps-*/**/*.md": "reference",
                 "azurermps-*/**/*.md": "reference",
                 "azuresmps-*/**/*.md": "reference",
                 "azurestackps-*/**/*.md": "reference",
-                "docs-conceptual/**/*.md": "article"
+                "docs-conceptual/**/*.md": "conceptual"
             },
             "ms.date": {
                 "azuredmps-*/**/*.md": "09/28/2018",
@@ -548,20 +650,24 @@
                 "azurestackps-1.4.0/**/*.md": "08/18/2018",
                 "azurestackps-1.5.0/**/*.md": "09/19/2018",
                 "azurestackps-1.6.0/**/*.md": "01/03/2019",
-                "azurermps-2.3.0/**/*.md": "11/02/2017",
+                "azurermps-2.5.0/**/*.md": "11/02/2017",
                 "azurermps-4.4.1/**/*.md": "06/20/2018",
                 "azurermps-5.7.0/**/*.md": "07/26/2018",
                 "azurermps-6.10.0/**/*.md": "10/9/2018",
                 "azurermps-6.13.0/**/*.md": "11/16/2018",
-                "azps-2.0.0/**/*.md": "05/01/2019",
+                "azps-1.8.0/**/*.md": "04/16/2019",
+                "azps-2.8.0/**/*.md": "10/14/2019",
+                "azps-3.3.0/**/*.md": "1/03/2020",
                 "azuresmps-4.0.0/**/*.md": "09/11/2018"
             },
             "feedback_system": {
-                "azurermps-2.3.0/**/*": "None",
+                "azurermps-2.5.0/**/*": "None",
                 "azurermps-4.4.1/**/*": "None",
                 "azurermps-5.7.0/**/*": "None",
                 "azurermps-6.13.0/**/*": "None",
-                "azps-2.0.0/**/*": "None",
+                "azps-1.8.0/**/*": "None",
+                "azps-2.8.0/**/*": "None",
+                "azps-3.3.0/**/*": "None",
                 "azuresmps-4.0.0/**/*": "None",
                 "azurestackps-1.3.0/**/*": "None",
                 "azurestackps-1.4.0/**/*": "None",
@@ -572,14 +678,20 @@
             "enable_powershell_try_it": {
                 "azurermps-*/**/*.md": true,
                 "azps-*/**/*.md": true
+            },
+            "searchScope": {
+               "az*-*/Az*.DataLakeAnalytics/*.md": ["Azure Data Lake Analytics","Azure","Azure Powershell"],
+               "az*-*/Az*.DataShare/*.md": ["Azure Data Share","Azure","Azure Powershell"],
+               "az*-*/Az*.HDInsight/*.md": ["Azure HDInsight","Azure","Azure Powershell"],
+               "az*-*/Az*.Kusto/*.md":  ["Kusto","Azure Data Explorer","Azure","Azure Powershell"],
+               "az*-*/Az*.RedisCache/*.md": ["Cache for Redis","Azure","Azure Powershell"],
+               "az*-*/Az*.StreamAnalytics/*.md": ["Stream Analytics","Azure","Azure Powershell"]
             }
         },
         "globalMetadata": {
             "apiPlatform": "powershell",
             "brand": "azure",
-            "searchScope": [
-                "Azure"
-            ],
+            "searchScope": ["Azure", "Azure Powershell"],
             "breadcrumb_path": "/powershell/bread/toc.json",
             "ms.devlang": "powershell",
             "feedback_system": "GitHub",

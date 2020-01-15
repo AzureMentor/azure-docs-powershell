@@ -19,6 +19,9 @@ metadata:
 items:
     - durationInMinutes: 1
       content: |-
+
+        [!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+
         In this tutorial, you learn all of the steps involved in setting up a virtual machine with
         Azure PowerShell. The tutorial also covers output queries, Azure resource reuse, and
         resource cleanup.
@@ -285,7 +288,7 @@ items:
       content: |-
 
         Congratulations! You learned how to create VMs with new or existing resources, used
-        expressions and other Azure PowerShell commands to to capture data to be stored in shell
+        expressions and other Azure PowerShell commands to capture data to be stored in shell
         variables, and looked at some of the resources that get created for Azure VMs.
 
         Where you go from here depends on how you plan to use Azure PowerShell. There are a variety

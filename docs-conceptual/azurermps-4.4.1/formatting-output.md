@@ -11,6 +11,8 @@ ms.date: 03/30/2017
 
 # Formatting query results
 
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+
 By default each PowerShell cmdlet has predefined formatting of output making it easy to read.  PowerShell also provides the flexibility to adjust the output or convert the cmdlet output to a different format with the following cmdlets:
 
 | Formatting      | Conversion       |
@@ -68,7 +70,7 @@ ResourceGroupName : MYWESTEURG
 
 ## Converting to other data types
 
-PowerShell also offers multiple output format you can use to meet your needs.  In the following example we use the `Select-Object` cmdlet to get attributes of the virtual machines in our subscription and and convert the output to CSV format for easy import into a database or spreadsheet.
+PowerShell also offers multiple output format you can use to meet your needs.  In the following example we use the `Select-Object` cmdlet to get attributes of the virtual machines in our subscription and convert the output to CSV format for easy import into a database or spreadsheet.
 
 ```powershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
